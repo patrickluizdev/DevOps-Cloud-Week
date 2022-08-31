@@ -1,0 +1,23 @@
+/* Comandos Docker */
+
+docker images         # Visualizar as imagens docker disponiveis.
+docker ps             # Visualizar os containers rodando atualmente.
+docker run            # Rodar um container, necessário passar os parametros de uso.
+docker build          # Faz o build de uma imagem docker baseado no Dockerfile que deve ser informado via parametros.
+docker rm             # Apaga um container que não está mais sendo utilizado, pode-se utiliza-lo junto ao -f para forçar a parada de um container em execução. 
+docker rmi            # Apaga uma imagem armazenada localmente.
+
+
+/* Comando utilizados durante a live */
+
+docker build -t dcw-app .            # Irá criar sua propria imagem baseado em instruções no dockerfile.
+docker run -itd -p 80:3000 dcw-app   # Irá rodar o container com a imagem previamente criada e expondo a aplicação na porta 80
+docker ps                            # Verificar se o container está rodando.
+
+docker run -itd -p 80:3000 devopscloudweek22/dcp-app
+
+
+# Rodar na instância app-server
+docker login                                  #  Efetua o login no Docker Hub
+docker tag dcw-app devopscloudweek3/dcw-app   #  Muda o nome da imagem docker.
+docker push devopscloudweek3/dcw-app          #  Envia a imagem local para o repositório remoto
