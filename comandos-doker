@@ -21,3 +21,8 @@ docker run -itd -p 80:3000 devopscloudweek22/dcp-app
 docker login                                  #  Efetua o login no Docker Hub
 docker tag dcw-app devopscloudweek3/dcw-app   #  Muda o nome da imagem docker.
 docker push devopscloudweek3/dcw-app          #  Envia a imagem local para o repositório remoto
+
+
+# Versionar a imagem
+docker tag local-image:tagname new-repo:tagname
+docker push new-repo:tagname
